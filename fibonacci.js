@@ -14,6 +14,14 @@ function fibonacci(num) {
 
 console.log(fibonacci(8));
 
-function fibsRec(num) {}
+function fibsRec(num, arr = [0, 1]) {
+    if (arr.length > num) {
+        return arr.slice(0, num);
+    }
+
+    arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+
+    return fibsRec(num, arr);
+}
 
 console.log(fibsRec(8));
